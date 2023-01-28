@@ -1,0 +1,14 @@
+const CategoryResolver = {
+  FOOD: "FOOD",
+  TRANSPORT: "TRANSPORT",
+  HOUSING: "HOUSING",
+  UTILITIES: "UTILITIES",
+  HEALTH: "HEALTH",
+  ENTERTAINMENT: "ENTERTAINMENT",
+  CLOTHING: "CLOTHING",
+  EDUCATION: "EDUCATION",
+  OTHER: "OTHER",
+  INCOME: "INCOME",
+};
+
+export default CategoryResolver;

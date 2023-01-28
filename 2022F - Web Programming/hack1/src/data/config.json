@@ -1,0 +1,35 @@
+{
+  "letters": [
+    { "char": "q" },
+    { "char": "w" },
+    { "char": "e" },
+    { "char": "r" },
+    { "char": "t" },
+    { "char": "y" },
+    { "char": "u" },
+    { "char": "i" },
+    { "char": "o" },
+    { "char": "p" },
+    { "char": "a" },
+    { "char": "s" },
+    { "char": "d" },
+    { "char": "f" },
+    { "char": "g" },
+    { "char": "h" },
+    { "char": "j" },
+    { "char": "k" },
+    { "char": "l" },
+    { "char": "Enter" },
+    { "char": "z" },
+    { "char": "x" },
+    { "char": "c" },
+    { "char": "v" },
+    { "char": "b" },
+    { "char": "n" },
+    { "char": "m" },
+    { "char": "Backspace" }
+  ],
+  "solutions": [
+      { "id": 1, "word": "funny" }
+  ]
+}

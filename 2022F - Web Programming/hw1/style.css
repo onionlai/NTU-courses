@@ -1,0 +1,366 @@
+* {
+    box-sizing: border-box;
+}
+html {height: 100%;} /*height要從root一路100%到後面 後面才能真的抓到視窗100%*/
+head, body { /*這裡有很多東西會被overwrite掉ㄟ*/
+    margin: 0px; /*容易失效*/
+    padding: 0px; /*容易失效*/
+    background: rgb(32, 32, 32);
+    color: rgb(234, 234, 234);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Noto Sans TC", sans; /*前者可以在html head中去Google fonts官網抓*/
+    overflow: hidden; /*容易失效*/
+    height: 100%;
+}
+.meet__root {
+    height: 100%;
+}
+/***********************/
+/********section********/
+/***********************/
+
+.meet__main {
+    font-size: 12px;
+    font-weight: 400;
+    /*border: 5px solid rgb(136, 173, 34);*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+    padding-bottom: 70px;  /*後面flex wrap起來如果真的超過還是會overflow出去..沒方法了 網路上說只有javascript可解*/
+    overflow: hidden;
+}
+.meet__main-participant-panel {
+    width: 70%;
+    /*border: 1px solid rgb(156, 122, 255);*/
+}
+.meet__other-participant-panel {
+    /*border: 1px solid rgb(52, 79, 112);*/
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.meet__other-participant-panel
+    .meet__participant-info{
+    background-color: rgb(56, 56, 56);
+    border-radius: .5em;
+    margin: .5em;
+    min-width: 150px;
+    max-width: 250px;
+    height: 150px;
+    flex-grow: 1; /*這樣justify-content:stretch才會有用*/
+    position: relative;
+}
+.meet__main-participant-panel
+    .meet__participant-info{
+    background-color: none;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.meet__participant-name {
+    position: absolute;
+    bottom:  1em;
+    left: 1em;
+}
+#pin_icon {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    width: 1em;
+    height: 1em;
+    background-image: url("images/icons/pinned.png");
+    background-size: .75em;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#pin_icon ~ .meet__participant-name {
+    left: 2.5em;
+}
+#mute_icon {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url("images/icons/participant_sound_off.png");
+    background-size: 1.5em;
+}
+
+.meet__participant-portrait {
+    height: 100%;
+    width: 30%;
+    position: absolute; /*center*/
+    top: 50%; /*center*/
+    left: 50%; /*center*/
+    transform: translate(-50%, -50%); /*center*/
+    background-size: 100% auto; /*according to width 30%*/
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.meet__main-participant-panel
+.meet__participant-portrait {
+    width: 20%;
+}
+#portrait_id_self {
+    background-image: url("images/portrait/portrait-self.png");
+}
+#portrait_id_0 {
+    background-image: url("images/portrait/portrait-0.png");
+}
+#portrait_id_1 {
+    background-image: url("images/portrait/portrait-1.png");
+}
+#portrait_id_2{
+    background-image: url("images/portrait/portrait-2.png");
+}
+#portrait_id_3{
+    background-image: url("images/portrait/portrait-3.png");
+}
+#portrait_id_4{
+    background-image: url("images/portrait/portrait-4.png");
+}
+.meet__participant-more-options {
+    background-color: gray;
+    opacity: 0;
+    height: 30px;
+    width: 100px;
+    position: absolute; /*center*/
+    top: 50%; /*center*/
+    left: 50%; /*center*/
+    transform: translate(-50%, -50%); /*center*/
+    background-image: url("images/icons/participant-more-options.png");
+    background-size: 100%;
+    background-position: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.meet__participant-info:hover .meet__participant-more-options {
+    opacity: 0.4;
+}
+.meet__participant-info:hover .meet__participant-more-options:hover {
+    opacity: 0.8;
+}
+
+/************************/
+/********* FOOTER *******/
+/************************/
+
+/****************************************/
+/****** [LEFT]-metting information*******/
+/****************************************/
+.meet__footer {
+    /* border: 0.5px solid white; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    background: rgb(32, 32, 32); /*Hack: 右欄overflow之後會跑到footer背景 很醜... overflow:hidden也沒用*/
+
+}
+.meet__info {
+    /*border: 0.5px solid white;*/
+    white-space: nowrap; /*子element不換行*/
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-shrink: 2;
+    align-items: center;
+    overflow: hidden;
+
+}
+.meet__info div {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 300px;
+}
+.meet__title {
+    min-width: 50px;
+    flex-shrink: 0;
+}
+
+/****************************************/
+/****** [MIDDLE]-control buttons*********/
+/****************************************/
+.meet__main-buttons-panel {
+    margin: 0;
+    padding: 0;
+    /*border: 0.5px solid rgb(156, 120, 255);*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    flex-grow: 0;
+    flex-shrink: 0; /*這不夠 還要加min-width才能確保他不會縮*/
+    min-width: 370px;
+}
+
+.meet__control-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.meet__control-button input[type="checkbox"] {
+    visibility: hidden;
+    position: absolute;
+}
+.meet__control-button label {
+    padding: 0em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    cursor: pointer;
+    background-size: 52px;
+    background-position: center;
+    transition: all 0.3s ease;
+}
+.meet__control-button label[for="leave"] {
+    width: 70px;
+    background-size:70px;
+    border-radius: 1.5em;
+}
+
+.meet__control-button label:hover {
+    filter: brightness(110%);
+}
+label[for="mute"] {
+    background-image: url("./images/icons/sound_on.png");
+}
+
+input[type="checkbox"]:checked + label[for="mute"] {
+    background-image: url("./images/icons/sound_off.png");
+}
+label[for="camera"] {
+    background-image: url("./images/icons/camera_on.png");
+}
+input[type="checkbox"]:checked + label[for="camera"] {
+    background-image: url("./images/icons/camera_off.png");
+}
+label[for="raise-hand"] {
+    background-image: url("./images/icons/cc_off.png");
+}
+input[type="checkbox"]:checked + label[for="raise-hand"] {
+    background-image: url("./images/icons/cc_on.png");
+}
+label[for="share-screen"] {
+    background-image: url("./images/icons/present_off.png");
+}
+input[type="checkbox"]:checked + label[for="share-screen"] {
+    background-image: url("./images/icons/present_on.png");
+}
+label[for="more-options"] {
+    background-image: url("./images/icons/options.png");
+}
+label[for="leave"] {
+    background-image: url("./images/icons/leave_call.png");
+}
+.button-on-msg, .button-off-msg {
+    opacity: 0;
+    position: absolute;
+    top: -10%;
+    font-size: 80%;
+    background: rgb(71, 71, 71);
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    padding: .3em .4em;
+    border-radius: 5%;
+    transition-duration: 100ms;
+}
+input[type="checkbox"]:hover:checked ~ .button-off-msg {
+    transition-duration: 500ms;
+    opacity: 1;
+}
+input[type="checkbox"]:hover:not(checked) ~ .button-on-msg {
+    transition-duration: 500ms;
+    opacity: 1;
+}
+
+/****************************************/
+/****** [RIGHT]-function buttons*********/
+/****************************************/
+
+.meet__right-buttons-panel {
+    margin: 0;
+    padding: 0;
+    /*border: 0.5px solid rgb(133, 93, 93);*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    flex-flow: row wrap;
+    overflow: clip;
+    width: 300px;
+    min-width: 300px;
+}
+.meet__right-buttons-panel button {
+    margin: 0.2em;
+    padding: 0em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: clip;
+    flex-shrink: 0;
+}
+.meet__function-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.meet__function-button input[type="checkbox"] {
+    visibility: hidden;
+    position: absolute;
+}
+.meet__function-button label {
+    padding: 0em;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    cursor: pointer;
+    background-size: 52px;
+    background-position: center;
+    transition: all 0.3s ease;
+}
+.meet__function-button label:hover {
+    background-color: rgba(255, 255, 255, 0.168);
+}
+
+label[for="detail"] {
+    background-image: url("./images/icons/meeting-details.png");
+}
+label[for="participant-list"] {
+    background-image: url("./images/icons/show-everyone.png");
+}
+label[for="everyone"] {
+    background-image: url("./images/icons/chat-with-everyone.png");
+}
+label[for="activities"] {
+    background-image: url("./images/icons/activities.png");
+}
+label[for="host-control"] {
+    background-image: url("./images/icons/host-controls.png");
+}

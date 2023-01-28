@@ -1,0 +1,32 @@
+/****************************************************************************
+  FileName      [ Wordle.css ]
+  PackageName   [ src/components/css ]
+  Author        [ Cheng-Hua Lu ]
+  Synopsis      [ This file set the style of Wordle. ]
+  Copyright     [ 2022 10 ]
+****************************************************************************/
+
+
+.Wordle-container{
+    color: white;
+    font-size: 30px;
+}
+
+.Wordle-win{
+    margin-top: 10pt;
+    font-size: 14pt;
+    vertical-align: middle;
+    color: #548c4c;
+
+}
+
+.Wordle-lose{
+    margin-top: 10pt;
+    font-size: 14pt;
+    vertical-align: middle;
+    color: red;
+}
+
+.Hidden{
+    visibility: hidden;
+}

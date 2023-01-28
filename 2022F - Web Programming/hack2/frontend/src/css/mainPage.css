@@ -1,0 +1,11 @@
+.mainPageContainer {
+    margin-top: 12em;
+    position: relative;
+    background-color: rgb(83, 119, 186);
+    width: 100%;
+    height: 100vh;
+    padding: 10em;
+    justify-content: center;
+    text-align: center;
+    color: aliceblue;
+}

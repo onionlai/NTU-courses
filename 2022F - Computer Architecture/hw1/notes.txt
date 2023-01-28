@@ -1,0 +1,60 @@
+========== RISC-V 32 Registers ==========
+x0         zero     the constant value 0
+x1          ra      return address
+x2          sp      stack pointer
+x3          gp      global pointer
+x4          tp      thread pointer
+x5-x7,
+x28-x31     t0-t6   temporaries
+x8          s0      frame pointer
+x9,
+x18-x27     s1-s11  saved registers
+x10-x11     a0-a1   function arguments/results
+x12-x17     a2-a7   function arguments
+========================================
+
+
+
+========== RISC-V 32 Instructions ==========
+----------- Computation ------------
+- Integer Register-Immediate Instructions
+addi            rd, rs1, simm12
+slli/srli/srai  rd, rs1, uimm5
+
+- Integer Register-Register Insructions
+add/sub         rd, rs1, rs2
+and/or/xor      rd, rs1, rs2
+sll/srl/sra     rd, rs1, rs2
+
+--------- Control Transfer ----------
+- Unconditional Jumps
+jal  rd, simm21          (jump and link)
+jalr rd, rs1, simm12    (jump and link register)
+
+- ConditionalBranches
+beq/bne     rs1, rs2, simm13 (branch if equal/nonequal)
+blt/bltu    rs1, rs2, simm13 (branch if less-than/unsigned)
+bge/bgeu    rs1, rs2, simm13 (branch if greater-equal/unsigned)
+
+------------- Load/Store ------------
+lw/                         (load 32-bit from rs1+simm12 to rd)
+lh/lhu/                     (load 16-bit/16-bit-unsigned)
+lb/lbu    rd, rs1, simm12   (load lb/lbu: 8-bit)
+sw/sh/sb  rs2, rs1, simm12  (store 32-bit from rs2 to rs1+simm12)
+
+----- Environment Call and Breakpoints ----
+ecall   (system call)
+ebreak  (bebugging)
+
+----------- Pseudo Instructions -----------
+
+li $v0, NUMBER
+
+li=Load Immediately, 將NUMBER存入$v0裏面
+這個程序是爲了接下來system call所做, $v0內的數值不同, 呼叫system call時會有不同的行爲
+參考jupiter說明: https://github.com/riscvsim/Docs/blob/master/assembler/ecalls.md
+
+la $a0, input
+la=Load Address，把input的地址讀入$a0中
+
+

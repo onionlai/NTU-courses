@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width" initial-scale=1.0">
+        <title> Google Meet </title>
+        <!-- <link rel="stylesheet" href="style.css" crossorigin="anonymous"> -->
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet"> <!-- get Noto Sans TC from Google Fonts -->
+
+    </head>
+    <body onload="updateTime()">
+        <div id="root" class="meet__root">
+            <section class="meet__main">
+                <div class="meet__main-participant-panel">
+                    <div class="meet__participant-info" id="id-0">
+                        <div class="pin_icon"></div>
+                        <div class="meet__participant-name"> 你 </div>
+                        <div class="meet__participant-portrait"  style="background-image: url('images/portrait/portrait-0.png')" id="portrait_id_middle"> </div>
+                        <div id="mute_icon"></div>
+                        <!-- <div id="x_icon" onclick="clickXHandler(event)"></div> -->
+                        <div class="meet__participant-more-options"  onclick="clickPinHandler(event)"></div>
+                    </div>
+
+                </div>
+                <div class="meet__other-participant-panel">
+                    <div class="meet__participant-info" id="id-1">
+                        <div class="pin_icon"></div>
+                        <div class="meet__participant-name"> 李彥儒
+                        </div>
+                        <div class="meet__participant-portrait"  style="background-image: url('images/portrait/portrait-1.png')"> </div>
+                        <div id="mute_icon"></div>
+                        <div id="x_icon" onclick="clickXHandler(event)"></div>
+                        <div class="meet__participant-more-options"  onclick="clickPinHandler(event)"></div>
+                    </div>
+                    <div class="meet__participant-info" id="id-2">
+                        <div class="pin_icon"></div>
+                        <div class="meet__participant-name"> 陳孟宏
+                        </div>
+                        <div class="meet__participant-portrait"  style="background-image: url('images/portrait/portrait-2.png')"> </div>
+                        <div id="mute_icon"></div>
+                        <div id="x_icon" onclick="clickXHandler(event)"></div>
+                        <div class="meet__participant-more-options"  onclick="clickPinHandler(event)"></div>
+                    </div>
+                    <div class="meet__participant-info" id="id-3">
+                        <div class="pin_icon"></div>
+                        <div class="meet__participant-name"> yl h
+                        </div>
+                        <div class="meet__participant-portrait"  style="background-image: url('images/portrait/portrait-3.png')"> </div>
+                        <div id="mute_icon"></div>
+                        <div id="x_icon" onclick="clickXHandler(event)"></div>
+                        <div class="meet__participant-more-options"  onclick="clickPinHandler(event)"></div>
+                    </div>
+                    <div class="meet__participant-info" id="id-4">
+                        <div class="pin_icon"></div>
+                        <div class="meet__participant-name"> 劉慕德/Joshua Lau
+                        </div>
+                        <div class="meet__participant-portrait"  style="background-image: url('images/portrait/portrait-4.png')"> </div>
+                        <div id="mute_icon"></div>
+                        <div id="x_icon" onclick="clickXHandler(event)"></div>
+                        <div class="meet__participant-more-options"  onclick="clickPinHandler(event)"></div>
+                    </div>
+                    <div class="meet__participant-info" id="id-5">
+                        <div class="pin_icon"></div>
+                        <div class="meet__participant-name"> 童子瑜
+                        </div>
+                        <div class="meet__participant-portrait"  style="background-image: url('images/portrait/portrait-5.png')"> </div>
+                        <div id="mute_icon"></div>
+                        <div id="x_icon" onclick="clickXHandler(event)"></div>
+                        <div class="meet__participant-more-options"  onclick="clickPinHandler(event)"></div>
+                    </div>
+                </div>
+                <div class="meet__add-participant-button" onclick="clickAddHandler(event)">
+                    <div class="meet__add-msg"> Add participants </div>
+                </div>
+            </section>
+            <footer class="meet__footer">
+                <div class="meet__info">
+                    <div class="meet__time"> 上午--:--</div>
+                    <div> &ensp;|&ensp; </div>
+                    <div class="meet__title"> Web Programming</div>
+                </div>
+                <ul class="meet__main-buttons-panel">
+                    <li> <div class="meet__control-button">
+                        <input id="mute" type="checkbox">
+                        <label for="mute"></label>
+                        <div class="button-on-msg"> Turn on microphone </div>
+                        <div class="button-off-msg"> Turn off microphone </div>
+                    </div></li>
+
+                    <li> <div class="meet__control-button">
+                        <input id="camera" type="checkbox">
+                        <label for="camera"></label>
+                        <div class="button-on-msg"> Turn on camera </div>
+                        <div class="button-off-msg"> Turn off camera </div>
+                    </div></li>
+
+                    <li> <div class="meet__control-button">
+                        <input id="raise-hand" type="checkbox">
+                        <label for="raise-hand"></label>
+                        <div class="button-on-msg"> Raise Hand </div>
+                        <div class="button-off-msg"> Put Down Hand </div>
+                    </div></li>
+
+                    <li> <div class="meet__control-button">
+                        <input id="share-screen" type="checkbox">
+                        <label for="share-screen"></label>
+                        <div class="button-on-msg"> Present now </div>
+                        <div class="button-off-msg"> You are presenting </div>
+                    </div></li>
+
+                    <li> <div class="meet__control-button">
+                        <input id="more-options" type="checkbox">
+                        <label for="more-options"></label>
+                        <div class="button-on-msg"> More options </div>
+                        <div class="button-off-msg"> More options </div>
+                    </div></li>
+
+                    <li> <div class="meet__control-button">
+                        <input id="leave" type="checkbox">
+                        <label for="leave"></label>
+                        <div class="button-on-msg"> Leave call </div>
+                        <div class="button-off-msg"> Leave call </div>
+                    </div></li>
+
+                </ul>
+                <ul class="meet__right-buttons-panel">
+                    <li> <div class="meet__function-button">
+                        <input id="detail" type="checkbox">
+                        <label for="detail"></label>
+                        <div class="button-on-msg"> Meeting details </div>
+
+                    </div></li>
+                    <li> <div class="meet__function-button">
+                        <input id="participant-list" type="checkbox">
+                        <label for="participant-list"></label>
+                        <div class="button-on-msg"> Show everyong </div>
+                    </div></li>
+                    <li> <div class="meet__function-button">
+                        <input id="everyone" type="checkbox">
+                        <label for="everyone"></label>
+                        <div class="button-on-msg"> Chat with everyone </div>
+                    </div></li>
+                    <li> <div class="meet__function-button">
+                        <input id="activities" type="checkbox">
+                        <label for="activities"></label>
+                        <div class="button-on-msg"> Activities </div>
+                    </div></li>
+                    <li> <div class="meet__function-button">
+                        <input id="host-control" type="checkbox">
+                        <label for="host-control"></label>
+                        <div class="button-on-msg"> Host controls </div>
+                    </div></li>
+
+
+                </ul>
+            </footer>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>

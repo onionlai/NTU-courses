@@ -1,0 +1,62 @@
+/****************************************************************************
+  FileName      [ Keyboard.css ]
+  PackageName   [ src/components/css ]
+  Author        [ Cheng-Hua Lu ]
+  Synopsis      [ This file set the style of Keyboard. ]
+  Copyright     [ 2022 10 ]
+****************************************************************************/
+
+.Keyboard-container{
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.Keyboard-char{
+    margin: 5px;
+    width: 40px;
+    height: 50px;
+    background-color: #808384;
+    display: inline-block;
+    border-radius: 6px;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.Keyboard-char.green{
+    background-color: #548c4c;
+}
+.Keyboard-char.yellow{
+    background-color: #b59f3b;
+}
+
+
+
+.Keyboard-char-enter{
+    margin: 5px;
+    width: 65px;
+    height: 50px;
+    background-color: #808384;
+    display: inline-block;
+    border-radius: 6px;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 14px;
+}
+.Keyboard-char-backspace{
+    margin: 5px;
+    width: 65px;
+    height: 50px;
+    background-color: #808384;
+    display: inline-block;
+    border-radius: 6px;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 14px;
+    
+    
+}
+

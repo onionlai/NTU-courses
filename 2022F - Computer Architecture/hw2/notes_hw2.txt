@@ -1,0 +1,23 @@
+# Sbrk
+Stores a pointer to a block of memory containing n additional bytes in register a0. This pointer is word aligned.
+
+## Example
+```
+    .globl __start
+
+    .text
+
+    __start:
+    li a0, 9   # ecall code
+    li a1, 100 # number of bytes
+    ecall
+```
+
+## Ecall Code
+a0 = 9
+
+## Arguments
+a1 = number of bytes to reserve
+
+
+

@@ -1,0 +1,18 @@
+{
+  "name": "111-1-web-hackathon03",
+  "version": "1.0.0",
+  "scripts": {
+    "install:all": "cd frontend && yarn && cd ../backend && yarn",
+    "frontend": "cd frontend && yarn start",
+    "backend": "cd backend && yarn server",
+    "test": "npx cypress run --spec cypress/e2e/**/*.cy.js"
+  },
+  "repository": "git@github.com:ntuee-web-programming/111-1-Web-Hackathon03.git",
+  "author": "madmaxieee <76544194+madmaxieee@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^12.1.0",
+    "dotenv-defaults": "^5.0.2",
+    "mongoose": "^6.8.0"
+  }
+}

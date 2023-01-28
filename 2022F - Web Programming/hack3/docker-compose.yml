@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./database/db:/data/db

@@ -1,0 +1,118 @@
+.navBarContainer {
+    justify-content: center;
+    position: fixed;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    width: 100%;
+    /* Full width */
+    display: block;
+    flex-direction: row;
+    padding-bottom: 1em;
+    min-height: 12em;
+    align-items: center;
+    background: rgb(7, 74, 141);
+    z-index: 1
+}
+
+.titleContainer {
+    padding: 0.5em;
+    color: white;
+    text-align: center;
+}
+
+.functionRow {
+    display: flex;
+}
+
+.filterContainer {
+    margin: 2em;
+    padding: 0.5em;
+    align-items: center;
+    display: flex;
+    width: 50%;
+    text-align: left;
+    background: whitesmoke;
+    border-radius: 5em;
+}
+
+.filterContainer:hover {
+    cursor: pointer;
+}
+
+.sortContainer {
+    margin: 2em;
+    align-items: center;
+    text-align: center;
+    width: 25%;
+    min-width: 5em;
+}
+
+.sortContainer select {
+    padding: 0.5em;
+    height: 100%;
+    width: 80%;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24'><path d='M0 0h24v24H0V0z' fill='none'/><path d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/></svg>") no-repeat right whitesmoke;
+    -webkit-appearance: none;
+    background-position-x: 95%;
+    border-radius: 5em;
+    border: none;
+}
+
+.sortContainer select option {
+    text-align: center;
+}
+
+.searchContainer {
+    margin: 2em;
+    align-items: center;
+    text-align: center;
+    width: 10%;
+    min-width: none;
+}
+
+.searchContainer button {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    min-width: none;
+    background: whitesmoke;
+    border-radius: 5em;
+    border: none;
+}
+
+.filter {
+    padding-left: 1em;
+    align-items: center;
+    width: 100%;
+    min-width: 6em;
+}
+
+.filterDetail {
+    border-radius: 2em;
+    background: whitesmoke;
+    margin: 2em;
+    margin-top: 0em;
+    margin-bottom: 1em;
+    padding: 2em 2em 1em 2em;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    min-width: 6em;
+}
+
+.inputBlock {
+    width: 33%;
+}
+
+.inputBlock label {
+    margin-left: 1em;
+}
+
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}

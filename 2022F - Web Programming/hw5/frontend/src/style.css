@@ -1,0 +1,92 @@
+html, body, #root {
+    height: 100%;
+    font-size: 30px;
+}
+.root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tileRow {
+    width: 270px;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.tile {
+    width: 90px;
+    height: 90px;
+    font-size: 60px;
+    color:rgb(97, 95, 89);
+    background-color:antiquewhite;
+    border-color: rgba(83, 86, 86, 0.389);
+    border-width: 1px
+}
+.tile:enabled:hover {
+    background-color:rgb(250, 250, 215);
+}
+
+.startButton {
+    background-color: rgb(177, 222, 207);
+    color:rgb(97, 95, 89);
+    border-color: rgba(83, 86, 86, 0.389);
+    border-width: 1px;
+    margin: 10px;
+    font-size: 30px;
+    width: 400px;
+    height: 50px;
+}
+.menuButton {
+    background-color: rgb(231, 255, 247);
+    color:rgb(97, 95, 89);
+    border-color: rgba(83, 86, 86, 0.389);
+    border-width: 1px;
+    /* margin: 10px; */
+    font-size: 15px;
+    width: 70px;
+    height: 25px;
+}
+.gameMessage {
+    font-size: 30px;
+}
+
+.offlineMsg {
+    position: fixed;
+    top: 0;
+    transition: opacity .5s;
+
+    background-color: rgb(255, 210, 210);
+    font-size: 20px;
+    width: 100%;
+    height: 1.5em;
+    text-align: center
+}
+
+.gameBoard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.guessInputBox {
+    display: inline;
+}
+.guessInputBox input{
+    width: 100px;
+    height: 25px;
+}
+.guessInputBox button{
+    width: 60px;
+    height: 25px;
+    font-size: 15px;
+    border: 0px;
+    background-color:antiquewhite;
+    color:rgb(97, 95, 89);
+
+}

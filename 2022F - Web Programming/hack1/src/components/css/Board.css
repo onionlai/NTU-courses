@@ -1,0 +1,14 @@
+/****************************************************************************
+  FileName      [ Board.css ]
+  PackageName   [ src/components/css ]
+  Author        [ Cheng-Hua Lu ]
+  Synopsis      [ This file set the style of Board. ]
+  Copyright     [ 2022 10 ]
+****************************************************************************/
+
+
+.Board-container{
+    margin:1%;
+    color: white;
+    font-size: 40px;
+}

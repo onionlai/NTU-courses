@@ -1,0 +1,28 @@
+/****************************************************************************
+  FileName      [ Cell.css ]
+  PackageName   [ src/components/css ]
+  Author        [ Cheng-Hua Lu ]
+  Synopsis      [ This file set the style of Cell. ]
+  Copyright     [ 2022 10 ]
+****************************************************************************/
+
+* {
+  font-family: 'Futura';
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  justify-content: "center";
+  align-items: "center";
+  display: "flex";
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+;
+
+.cell:hover {
+  cursor: pointer;
+}

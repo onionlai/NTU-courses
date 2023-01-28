@@ -1,0 +1,37 @@
+/****************************************************************************
+  FileName      [ Board.css ]
+  PackageName   [ src/components/css ]
+  Author        [ Cheng-Hua Lu ]
+  Synopsis      [ This file set the style of Board. ]
+  Copyright     [ 2022 10 ]
+****************************************************************************/
+
+* {
+    font-family: 'Futura';
+}
+
+.boardPage {
+    margin: 0;
+}
+
+.boardWrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+
+}
+
+.boardContainer {
+    border: 10px solid darkgray;
+    border-radius: 10px;
+    background-color: darkgrey;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

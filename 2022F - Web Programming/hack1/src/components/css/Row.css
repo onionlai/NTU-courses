@@ -1,0 +1,110 @@
+/****************************************************************************
+  FileName      [ Row.css ]
+  PackageName   [ src/components/css ]
+  Author        [ Cheng-Hua Lu ]
+  Synopsis      [ This file set the style of Row and CurRow. ]
+  Copyright     [ 2022 10 ]
+****************************************************************************/
+
+.Row-container {}
+
+.Row-wrapper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.Row-wrapper.current>.Row-wordbox.filled {
+    animation: bounce 0.2s ease-in-out forwards;
+}
+
+.Row-wordbox {
+    display: block;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #3a3a3c;
+    margin: 4px;
+    text-align: center;
+    line-height: 55px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.Row-wrapper>div.green {
+    --background: #548c4c;
+    --border-color: #548c4c;
+    animation: flip 0.5s ease forwards;
+}
+
+.Row-wrapper>div.yellow {
+    --background: #b59f3b;
+    --border-color: #b59f3b;
+    animation: flip 0.5s ease forwards;
+}
+
+.Row-wrapper>div.grey {
+    --background: #3a3a3c;
+    --border-color: #3a3a3c;
+    animation: flip 0.6s ease forwards;
+}
+
+.Row-wrapper>div:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.Row-wrapper>div:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.Row-wrapper>div:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.Row-wrapper>div:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+/* keyframe animations */
+@keyframes flip {
+    0% {
+        transform: rotateX(0);
+        background: #000;
+        border-color: #3a3a3c;
+    }
+
+    45% {
+        transform: rotateX(90deg);
+        background: #000;
+        border-color: #3a3a3c;
+    }
+
+    65% {
+        transform: rotateX(90deg);
+        background: var(--background);
+        border-color: var(--border-color);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+        background: var(--background);
+        border-color: var(--border-color);
+        color: white;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+        border-color: #565758;
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        border-color: #565758;
+    }
+}

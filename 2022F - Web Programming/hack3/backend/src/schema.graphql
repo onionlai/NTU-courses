@@ -1,0 +1,61 @@
+scalar Date
+
+enum Category {
+    FOOD
+    TRANSPORT
+    HOUSING
+    UTILITIES
+    HEALTH
+    ENTERTAINMENT
+    CLOTHING
+    EDUCATION
+    OTHER
+    INCOME
+}
+
+type Item {
+    id: ID!
+    name: String!
+    amount: Int!
+    category: String!
+    date: Date!
+    description: String
+}
+
+type Query {
+    items: [Item!]!
+}
+
+input CreateItemInput {
+    id: ID!
+    name: String!
+    amount: Int!
+    category: String!
+    date: Date!
+    description: String
+}
+
+input UpdateItemInput {
+    id: ID!
+    name: String
+    amount: Int
+    category: String
+    date: Date
+    description: String
+}
+
+type Mutation {
+    createItem(input: CreateItemInput!): Item
+    updateItem(input: UpdateItemInput!): Item
+    # TODO 5.1 Define the schema for the deleteItem Mutation
+    deleteItem(id: ID!): ID!
+    # TODO 5.1 End
+}
+
+type Subscription {
+    itemCreated: Item!
+    itemUpdated: Item!
+    # TODO 6.1 Define the schema for the deleteItem Subscription
+    itemDeleted: ID!
+    # TODO 6.1 End
+}
