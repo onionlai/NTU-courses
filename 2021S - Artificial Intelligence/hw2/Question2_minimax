@@ -1,0 +1,354 @@
+Starting on 4-11 at 0:56:25
+
+Question q2
+===========
+
+*** FAIL: test_cases/q2/0-lecture-6-tree.test
+***     Incorrect move for depth=2
+***         Student move: Right
+***         Optimal move: Center
+***     Tree:
+***                max
+***           /-/   |   \--\
+***          /      |       \
+***         /       |        \
+***      min1      min2      min3
+***       /|\      /|\       /|\ 
+***      / | \    / | \     / | \
+***     A  B  C  D  E  F   G  H  I  
+***     3 12  8  5  4  6  14  1  11
+*** FAIL: test_cases/q2/0-small-tree.test
+***     Incorrect move for depth=3
+***         Student move: pacRight
+***         Optimal move: pacLeft
+***     Tree:
+***             root
+***            /    \
+***      minLeft  minRight
+***       / \       /    \
+***      A   B     C   deeper
+***      4   3     2     |
+***                      D
+***                    1000
+*** PASS: test_cases/q2/1-1-minmax.test
+*** FAIL: test_cases/q2/1-2-minmax.test
+***     Incorrect move for depth=3
+***         Student move: Left
+***         Optimal move: Right
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \                 |
+***        c1        c2             cx
+***       /  \      /  \             |
+***      d1   d2  d3   d4           dx
+***     -3    -9  10    6         -2.99
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is -3.
+*** PASS: test_cases/q2/1-3-minmax.test
+*** FAIL: test_cases/q2/1-4-minmax.test
+***     Incorrect move for depth=3
+***         Student move: Left
+***         Optimal move: Right
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***              |                /    \
+***             cx             c3        c4
+***              |            /   \     /   \
+***             dx           d5   d6   d7   d8
+***            3.99          4    -7   0    5
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b2 is 4.
+*** PASS: test_cases/q2/1-5-minmax.test
+*** FAIL: test_cases/q2/1-6-minmax.test
+***     Incorrect move for depth=4
+***         Student move: Right
+***         Optimal move: Left
+***     Tree:
+***                  /-----a------\
+***                 /              \
+***                /                \
+***              b1                  b2
+***            /    \                |
+***         c1        c2             cx
+***        /  \      /  \            |
+***       d1   d2  d3   d4           dx
+***      / \  / \  / \  / \          |
+***      A B  C D  E F  G H          Z
+***     -3 13 5 9 10 3 -6 8        2.99
+***     
+***     a - max
+***     b - min
+***     c - max
+***     d - min
+***     
+***     Note the minimax value of b1 is 3.
+*** FAIL: test_cases/q2/1-7-minmax.test
+***     Incorrect move for depth=4
+***         Student move: Right
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***             |                 /    \
+***             cx             c3        c4
+***             |             /   \     /   \
+***             dx           d5   d6   d7   d8
+***             |           / \  / \  / \  / \ 
+***             Z           I J  K L  M N  O P
+***          -1.99        -1 -9  4 7  2 5 -3 -2
+***     
+***     a - max
+***     b - min
+***     c - min
+***     d - max
+***     
+***     Note that the minimax value of b2 is -2
+*** PASS: test_cases/q2/1-8-minmax.test
+*** FAIL: test_cases/q2/2-1a-vary-depth.test
+***     Incorrect generated nodes for depth=1
+***         Student generated nodes: a b1 b2 c1 c2 cx d1 d2 d3 d4 dx
+***         Correct generated nodes: a b1 b2 c1 c2 cx
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \                 |
+***     -4 c1        c2 9           cx -4.01
+***       /  \      /  \             |
+***      d1   d2  d3   d4           dx
+***     -3    -9  10    6         -4.01
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is -3, but the depth=1 limited value is -4.
+***     The values next to c1, c2, and cx are the values of the evaluation function, not
+***     necessarily the correct minimax backup.
+*** PASS: test_cases/q2/2-1b-vary-depth.test
+*** FAIL: test_cases/q2/2-2a-vary-depth.test
+***     Incorrect move for depth=1
+***         Student move: Left
+***         Optimal move: Right
+***     Incorrect generated nodes for depth=1
+***         Student generated nodes: a b1 b2 c1 c2 cx d1 d2 d3 d4 dx
+***         Correct generated nodes: a b1 b2 c1 c2 cx
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \                 |
+***     -4 c1        c2 9           cx -3.99
+***       /  \      /  \             |
+***      d1   d2  d3   d4           dx
+***     -3    -9  10    6         -3.99
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is -3, but the depth=1 limited value is -4.
+***     The values next to c1, c2, and cx are the values of the evaluation function, not
+***     necessarily the correct minimax backup.
+*** PASS: test_cases/q2/2-2b-vary-depth.test
+*** FAIL: test_cases/q2/2-3a-vary-depth.test
+***     Incorrect generated nodes for depth=1
+***         Student generated nodes: a b1 b2 c3 c4 cx d5 d6 d7 d8 dx
+***         Correct generated nodes: a b1 b2 c3 c4 cx
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***              |                /    \
+***      5.01   cx          8  c3        c4   5
+***              |            /   \     /   \
+***             dx           d5   d6   d7   d8
+***            5.01          4    -7   0    5
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is 4, but the depth=1 limited value is 5.
+***     The values next to c3, c4, and cx are the values of the evaluation function, not
+***     necessarily the correct minimax backup.
+*** PASS: test_cases/q2/2-3b-vary-depth.test
+*** FAIL: test_cases/q2/2-4a-vary-depth.test
+***     Incorrect move for depth=1
+***         Student move: Left
+***         Optimal move: Right
+***     Incorrect generated nodes for depth=1
+***         Student generated nodes: a b1 b2 c3 c4 cx d5 d6 d7 d8 dx
+***         Correct generated nodes: a b1 b2 c3 c4 cx
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***              |                /    \
+***      4.99   cx          8  c3        c4   5
+***              |            /   \     /   \
+***             dx           d5   d6   d7   d8
+***            4.99          4    -7   0    5
+***     
+***     a - max
+***     b - min
+***     c - max
+***     
+***     Note that the minimax value of b1 is 4, but the depth=1 limited value is 5.
+***     The values next to c3, c4, and cx are the values of the evaluation function, not
+***     necessarily the correct minimax backup.
+*** PASS: test_cases/q2/2-4b-vary-depth.test
+*** PASS: test_cases/q2/2-one-ghost-3level.test
+*** PASS: test_cases/q2/3-one-ghost-4level.test
+*** PASS: test_cases/q2/4-two-ghosts-3level.test
+*** FAIL: test_cases/q2/5-two-ghosts-4level.test
+***     Incorrect move for depth=4
+***         Student move: Right
+***         Optimal move: Left
+***     Tree:
+***                 /-----a------\
+***                /              \
+***               /                \
+***             b1                  b2
+***           /    \              /    \
+***        c1        c2        c3        c4
+***       /  \      /  \      /   \     /   \
+***      d1   d2  d3   d4    d5   d6   d7   d8
+***     / \  / \  / \  / \   / \  / \  / \  / \ 
+***     A B  C D  E F  G H   I J  K L  M N  O P
+***     3 13 5 9 10 11 6 8   1 0  4 7 12 15 2 14
+***     
+***     a - max
+***     b - min
+***     c - min
+***     d - max
+*** PASS: test_cases/q2/6-tied-root.test
+*** FAIL: test_cases/q2/7-1a-check-depth-one-ghost.test
+***     Incorrect move for depth=1
+***         Student move: Right
+***         Optimal move: Left
+***     Incorrect generated nodes for depth=1
+***         Student generated nodes: a b1 b2 b3 c1 c2 c3 d1 d2 d3 e1 e2 e3 f1 f2 f3 g1 g2 g3
+***         Correct generated nodes: a b1 b2 b3 c1 c2 c3
+***     Tree:
+***                 a
+***           /-/   |   \--\
+***          /      |       \
+***       0 b1    0 b2      b3 8
+***         |       |        |
+***      10 c1    0 c2      c3 8
+***         |       |        |
+***       0 d1    0 d2      d3 8
+***         |       |        |
+***       0 e1   10 e2      e3 8
+***         |       |        |
+***       0 f1    0 f2      f3 8
+***         |       |        |
+***         g1      g2      g3
+***         0       0        8
+***     
+***     a - max
+***     b - min
+***     c - max
+***     d - min
+***     e - max
+***     f - min
+***     
+***     At depth 1, the evaluation function is called at level c,
+***     so Left should be returned. If your algorithm is returning a
+***     different action, check how you implemented your depth.
+*** FAIL: test_cases/q2/7-1b-check-depth-one-ghost.test
+***     Incorrect move for depth=2
+***         Student move: Right
+***         Optimal move: Center
+***     Incorrect generated nodes for depth=2
+***         Student generated nodes: a b1 b2 b3 c1 c2 c3 d1 d2 d3 e1 e2 e3 f1 f2 f3 g1 g2 g3
+***         Correct generated nodes: a b1 b2 b3 c1 c2 c3 d1 d2 d3 e1 e2 e3
+***     Tree:
+***                 a
+***           /-/   |   \--\
+***          /      |       \
+***       0 b1    0 b2      b3 8
+***         |       |        |
+***      10 c1    0 c2      c3 8
+***         |       |        |
+***       0 d1    0 d2      d3 8
+***         |       |        |
+***       0 e1   10 e2      e3 8
+***         |       |        |
+***       0 f1    0 f2      f3 8
+***         |       |        |
+***         g1      g2      g3
+***         0       0        8
+***     
+***     a - max
+***     b - min
+***     c - max
+***     d - min
+***     e - max
+***     f - min
+***     
+***     At depth 2, the evaluation function is called at level e,
+***     so Center should be returned. If your algorithm is returning a
+***     different action, check how you implemented your depth.
+*** PASS: test_cases/q2/7-1c-check-depth-one-ghost.test
+*** PASS: test_cases/q2/7-2a-check-depth-two-ghosts.test
+*** PASS: test_cases/q2/7-2b-check-depth-two-ghosts.test
+*** PASS: test_cases/q2/7-2c-check-depth-two-ghosts.test
+*** Running MinimaxAgent on smallClassic 1 time(s).
+Pacman died! Score: 84
+Average Score: 84.0
+Scores:        84.0
+Win Rate:      0/1 (0.00)
+Record:        Loss
+*** Finished running MinimaxAgent on smallClassic after 27 seconds.
+*** Won 0 out of 1 games. Average score: 84.000000 ***
+*** FAIL: test_cases/q2/8-pacman-game.test
+***     Bug: Suboptimal moves
+***     State:%%%%%%%%%%%%%%%%%%%%
+***     %      %    %>  ...%
+***     % %%   %%  %%G G%%.%
+***     % %  %        %.o%.%
+***     % %% % %%%%%%.%.%%.%
+***     %         .........%
+***     %%%%%%%%%%%%%%%%%%%%
+***     Score: 496
+***     
+***     Student Move:Stop
+***     Optimal Move:East
+*** Tests failed.
+
+### Question q2: 0/30 ###
+
+
+Finished at 0:56:53
+
+Provisional grades
+==================
+Question q2: 0/30
+------------------
+Total: 0/30
+
+Your grades are NOT yet registered.  To register your grades, make sure
+to follow your instructor's guidelines to receive credit on your project.
+

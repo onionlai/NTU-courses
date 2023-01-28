@@ -1,0 +1,33 @@
+  if(p_vma->flags & MAP_SHARED){
+    struct file *f = p_vma->file;
+
+    for(uint64 va = addr; va < addr+length; va +=PGSIZE){
+      // get the physical address
+      pte_t *pte;
+      pte = walk(p->pagetable, va, 0);
+      uint64 pa = PTE2PA(*pte);
+
+      // 以下為filewrite實作的write()
+      // 我把writei改成由physical address寫
+
+      int max = ((MAXOPBLOCKS-1-1-2) / 2) * BSIZE;
+      int r, i = 0;
+      while(i < length){
+        int n1 = length - i;
+        if(n1 > max)
+          n1 = max;
+        begin_op();
+        ilock(f->ip);
+        if ((r = writei(f->ip, 0, pa + i, f->off, n1)) > 0)
+          f->off += r;
+        iunlock(f->ip);
+        end_op();
+
+        if(r != n1){
+          // error from writei
+          break;
+        }
+        i += r;
+      }
+    }
+  }

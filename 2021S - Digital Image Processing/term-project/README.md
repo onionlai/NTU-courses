@@ -1,0 +1,2 @@
+Check report and slides files for implementation details.
+This folder contains only the codes of the second method: Motion Approach, which are forked and modified from original authors. Other codes not in this folder were written by other teammates and couldn't be found.
