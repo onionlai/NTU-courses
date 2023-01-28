@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="jquery-3.6.0.min.js"> </script>
+    <script src="webpd-latest.min.js"> </script>
+    <script>
+        var patch
+        $.get('pd_fire.txt', function(patchStr) {
+              patch = Pd.loadPatch(patchStr)
+              Pd.start()
+        })
+    </script>
+
+    <script>
+        var patch2
+        $.get('pd_bite.txt', function(patchStr2) {
+              patch2 = Pd.loadPatch(patchStr2)
+              Pd.start()
+        })
+    </script>
+
+    <script>
+        var patch3
+        $.get('pd_pop.txt', function(patchStr3) {
+              patch3 = Pd.loadPatch(patchStr3)
+              Pd.start()
+        })
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <script src="main.js"></script>
+    <p style="font-size: 0.2em; position:absolute; bottom: 0">Copyright © 2021 經堯戰隊. All rights reserved.</p>
+  </body>
+</html>

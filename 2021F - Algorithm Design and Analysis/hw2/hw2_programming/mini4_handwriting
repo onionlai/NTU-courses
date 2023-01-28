@@ -1,0 +1,17 @@
+Bounded Knapsack Problem
+1. Problem:
+
+Consider the following variant of knapsack problem: Given n items, where the i-th item has value v_i and weighs w_i respectively. Additionally, the i-th item has c_i copies, i.e. there is a limited number of supply for each item compared to UKP.
+
+Please give an O(n * W * logC) algorithm to find the max value with W capacity, where C = max{c_1, c_2, ..., c_n}. and explain why it meets the time complexity requirement.
+
+2. Hint:
+ Reduce the problem to 0-1 knapsack.
+
+3. Notice
+
+Please answer in 10 sentences (the less, the better), and you will get full credit. Some credits will be taken away if the answer is too lengthy. Besides, you can skip the explanation of why it's a 0-1 knapsack problem after you reduce the original problem to it.
+
+Ans
+對於每一個種類i的物品，令上限 m = min(c_i, w/w_i)，將 2^0, 2^1, 2^2, ..., 2^k, m - 2^k 個i物品各自組一起作為新的item，並計算每組重量及價值(n個一組就是價值v_i * n, 重量w_i * n)，則每個種類i會分成 ceiling(log M) < log(C_i) 個物品。
+原問題可視為 0/1 knapsack problem，複雜度為 O(n * W * log C) 因為現在物品變成物品組且數量 <= n * log C。
