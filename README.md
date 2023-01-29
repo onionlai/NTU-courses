@@ -4,7 +4,7 @@ This repo contains some of the coding assignments during my undergraduate CS deg
 ## 2020 Fall
 | Semester | Name | Language |
 | --------- | --------- | --------- |
-| 2020 Fall | Systems Programming | --------- |
+| 2020 Fall | [Systems Programming](./2020F%20-%20Systems%20Programming/) | C, Shell Script |
 
 ## 2021 Spring
 | Semester | Name | Language |
@@ -18,7 +18,7 @@ This repo contains some of the coding assignments during my undergraduate CS deg
 | --------- | --------- | --------- |
 | 2021 Fall | [Algorithm Design and Analysis](./2021F%20-%20Algorithm%20Design%20and%20Analysis/) | C++ |
 | 2021 Fall | [Digital Sound Art and Creation](./2021F%20-%20Digital%20Sound%20Art%20and%20Creation/) | PureData, Python, p5.js |
-| 2021 Fall | Game Programming | --------- |
+| 2021 Fall | [Game Programming](./2021F%20-%20Game%20Programming/) | Unity, C# |
 | 2021 Fall | [Introduction to Digital Speech Processing](./2021F%20-%20Introduction%20to%20Digital%20Speech%20Processing/) | C, Python, Shell Script |
 
 ## 2022 Fall
