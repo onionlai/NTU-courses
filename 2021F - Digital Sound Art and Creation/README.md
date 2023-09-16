@@ -1,5 +1,5 @@
 # 2021 Fall | Digital Sound Art and Creation
-In this course, we used PureData, an open source visual programming language for multimedia, to make our own multimedia works. Although it is not a typical CS course, I want to share all the funny work I've done with my teammates in this course.
+In this course, we used PureData, an open-source visual programming language for multimedia, to create our own multimedia projects. Although it's not a typical CS course, I want to share all the fun projects I've worked on with my teammates in this course.
 
 ## Project 1 - Sound of 13-Face Bricks
 The 13-groove bricks, which are commonly seen in the buildings of National Taiwan University, are a building material that became popular in Taiwan at the end of 1920. It was mainly produced by the Beitou Kiln Factory and was used in many public buildings built during that period. The 13-groove bricks are also called national defense bricks. Because the concave-convex design on the surface can avoid reflection, those bricks and can protect the building from being discovered by the enemy. In Taiwan's rainy climate, these grooves also help draining the water on the surface of the building.
