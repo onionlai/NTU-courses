@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
     pipe(p);
     int pid = fork();
 
-    if(pid == 0){ //parent: Holmes
+    if(pid != 0){ //parent: Holmes
         close(p[1]);
         char rst[1] = {};
         read(p[0], rst, sizeof(rst));
